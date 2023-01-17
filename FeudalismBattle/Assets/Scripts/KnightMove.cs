@@ -47,5 +47,6 @@ public class KnightMove : MonoBehaviour
         //rb.velocity = new Vector2(x, y);
         if (moveDir >= 0)
             animator.SetInteger("MoveDirectionInt", moveDir);
+        animator.SetFloat("Speed", Mathf.Sqrt(x * x + y * y) / moveSpeed);
     }
 }
