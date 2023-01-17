@@ -507,7 +507,7 @@ MonoBehaviour:
   waterTilemap: {fileID: 1134462732}
   waterRuleTile: {fileID: 11400000, guid: bf03ab6785af27741871f68ac50b01c0, type: 2}
   grassTile: {fileID: 11400000, guid: 90d4053233723c040bdd57b0741f6a97, type: 2}
-  noiseScale: 0.2
+  noiseScale: 0.25
 --- !u!1 &1134462729
 GameObject:
   m_ObjectHideFlags: 0
