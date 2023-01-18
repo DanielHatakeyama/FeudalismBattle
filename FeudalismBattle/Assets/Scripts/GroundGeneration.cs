@@ -6,17 +6,29 @@ using UnityEngine.Tilemaps;
 public class GroundGeneration : MonoBehaviour
 {
 
-    [SerializeField] 
-    private Vector2 mapSize;
 
-    public Tilemap groundTilemap;
-    public Tilemap waterTilemap;
+    [Header("Map Settings")]
+    public Vector2 mapSize = new Vector2(50, 50);
+    public int seed = 0; // Declare a seed variable
 
-    public RuleTile waterRuleTile;
-    public Tile grassTile;
+    [SerializeField] private Tilemap groundTilemap;
+    [SerializeField] private Tilemap waterTilemap;
 
-    public float noiseScale = 0.1f;
+    [Header("Ground Settings")]
 
+    [SerializeField] private RuleTile waterRuleTile;
+    [SerializeField] private Tile grassTile;
+
+    [Header("Water Settings")]
+
+    [Range(0, 1)]
+    [SerializeField] private float noiseScale = 0.09f;
+    [Range(0, 1)]
+    [SerializeField] private float waterLevel = 0.4f;
+    [SerializeField] private int octaves = 1; 
+    [SerializeField] private float persistence = 1f; 
+    [SerializeField] private float lacunarity = 2f;
+    private float[,] noiseMap; // TODO make noise better implemented.
 
     // Start is called before the first frame update
     public void Start()
@@ -28,6 +40,8 @@ public class GroundGeneration : MonoBehaviour
 
         Debug.Log(mapSize);
 
+        // TODO Make grass geneartion not just grass but a bunch of different tiles that are populated based on height and temperature map. This could eventually be combined with the celular atonoma process to run a better terrain generation.
+
         // Set the entire background to grass, just for now
         for (int x = 0; x < mapSize.x; x++) {
             for (int y = 0; y < mapSize.y; y++) {
@@ -35,67 +49,35 @@ public class GroundGeneration : MonoBehaviour
             }
         }
 
-        for (int x = 0; x < mapSize.x; x++)
-        {
-            for (int y = 0; y < mapSize.y; y++)
-            {
-                float noise = Mathf.PerlinNoise((x + 0.5f) * noiseScale, (y + 0.5f) * noiseScale);
+        // TODO Make noise generation for water much better and cooler looking, probably involve celular atonoma to grow water dynamically.
 
-                if (noise > 0.5f)
+        // Note that it is limited at -1 temporarily so water does not generate outside the map. 
+        // Later this would be nice to remove so we get water seamlessly leaving the edges of the map.
+
+        for (int x = 0; x < mapSize.x-1; x++)
+        {
+            for (int y = 0; y < mapSize.y-1; y++)
+            {
+                float noiseValue = Mathf.PerlinNoise((x + 0.5f) * noiseScale, (y + 0.5f) * noiseScale);
+                
+                // float noiseValue = simplexNoise.cnoise(new float2(x * scale, y * scale));
+
+                if (noiseValue < waterLevel)
                 {
+                    //Place a water rule tile in the top left corner of the 4x4 block
                     waterTilemap.SetTile(new Vector3Int(x, y, 0), waterRuleTile);
+
+                    //Place a water rule tile in the top right corner of the 4x4 block
+                    waterTilemap.SetTile(new Vector3Int(x + 1, y, 0), waterRuleTile);
+
+                    //Place a water rule tile in the bottom left corner of the 4x4 block
+                    waterTilemap.SetTile(new Vector3Int(x, y + 1, 0), waterRuleTile);
+
+                    //Place a water rule tile in the bottom right corner of the 4x4 block
+                    waterTilemap.SetTile(new Vector3Int(x + 1, y + 1, 0), waterRuleTile);
                 }
             }
         }
-
-        // waterTilemap.SetTile(new Vector3Int(0, 0, 0), waterRuleTile);
-        // waterTilemap.SetTile(new Vector3Int(1, 0, 0), waterRuleTile);
-        // waterTilemap.SetTile(new Vector3Int(0, 1, 0), waterRuleTile);
-
-
-        
-        // mapHeight = mapSize.y;
-        // mapWidth = mapSize.x;
-
-        // Terrain perlin noise generation
-        // for (int x = 0; x < mapWidth; x++) {
-        //     for (int y = 0; y < mapHeight; y++) {
-
-        //     }
-        // }
-
-
-        // Create a 2D array to store the terrain data
-        // float[,] terrainData = new float[mapWidth, mapHeight];
-
-        // Fill the terrainData array with random noise values
-        // for (int x = 0; x < mapWidth; x++)
-        // {
-        //     for (int y = 0; y < mapHeight; y++)
-        //     {
-        //         terrainData[x, y] = Mathf.PerlinNoise((float)x / mapWidth * scale, (float)y / mapHeight * scale);
-        //     }
-        // }
-
-        // // Iterate through the terrainData array and instantiate the appropriate tile
-        // for (int x = 0; x < mapWidth; x++)
-        // {
-        //     for (int y = 0; y < mapHeight; y++)
-        //     {
-        //         // Set a threshold for water (e.g. 0.2)
-        //         if (terrainData[x, y] < 0.2)
-        //         {
-        //             // Instantiate a water tile
-        //             Instantiate(waterTile, new Vector3(x, y, 0), Quaternion.identity);
-        //         }
-        //         else
-        //         {
-        //             // Instantiate a grass tile
-        //             Instantiate(grassTile, new Vector3(x, y, 0), Quaternion.identity);
-        //         }
-        //     }
-        // }
-
     }
 
     // Update is called once per frame  
