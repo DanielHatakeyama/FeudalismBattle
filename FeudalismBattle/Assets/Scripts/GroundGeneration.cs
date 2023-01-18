@@ -33,6 +33,7 @@ public class GroundGeneration : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+        // Set Bounds
 
         // Get children tilemaps
         groundTilemap = transform.Find("Ground").GetComponent<Tilemap>();
