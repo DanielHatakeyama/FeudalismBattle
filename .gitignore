@@ -12,6 +12,8 @@
 
 # Um I hope this fixes problem
 [Ff]eudalismBattle/UserSettings/
+[Ff]eudalismBattle/UserSettings/EditorUserSettings.asset
+
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
