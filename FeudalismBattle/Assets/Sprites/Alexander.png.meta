@@ -125,7 +125,7 @@ TextureImporter:
         width: 13
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,11 +142,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 13
-        y: 47
+        y: 46
         width: 17
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,7 +167,7 @@ TextureImporter:
         width: 17
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -183,12 +183,12 @@ TextureImporter:
       name: Alexander_3
       rect:
         serializedVersion: 2
-        x: 47
+        x: 64
         y: 47
         width: 15
-        height: 20
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,12 +204,12 @@ TextureImporter:
       name: Alexander_4
       rect:
         serializedVersion: 2
-        x: 62
-        y: 47
+        x: 79
+        y: 46
         width: 17
-        height: 20
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,11 +226,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 25
+        y: 24
         width: 13
-        height: 20
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -247,11 +247,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 15
-        y: 25
+        y: 24
         width: 15
-        height: 20
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -268,11 +268,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 30
-        y: 25
+        y: 24
         width: 17
-        height: 20
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -352,11 +352,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 20
-        y: 5
+        y: 6
         width: 9
-        height: 18
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -373,11 +373,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 29
-        y: 5
+        y: 6
         width: 9
-        height: 18
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -393,12 +393,12 @@ TextureImporter:
       name: Alexander_13
       rect:
         serializedVersion: 2
-        x: 38
+        x: 39
         y: 6
         width: 9
-        height: 18
+        height: 17
       alignment: 9
-      pivot: {x: 0.6151394, y: 0.5000001}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -416,10 +416,10 @@ TextureImporter:
         serializedVersion: 2
         x: 48
         y: 6
-        width: 10
-        height: 18
+        width: 9
+        height: 17
       alignment: 9
-      pivot: {x: 0.45341033, y: 0.5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -432,22 +432,22 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alexander_15
+      name: Alexander_16
       rect:
         serializedVersion: 2
-        x: 59
-        y: 6
-        width: 11
-        height: 18
+        x: 47
+        y: 48
+        width: 17
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1511b8408969f0f43830186e92b08d62
-      internalID: -1232220813
+      spriteID: a40089ee82fa5ae4ea17bb584e51f0a9
+      internalID: -1787917768
       vertices: []
       indices: 
       edges: []
@@ -477,6 +477,7 @@ TextureImporter:
       Alexander_0: -762731148
       Alexander_4: -254402964
       Alexander_7: -933575762
+      Alexander_16: -1787917768
       Alexander_10: -421970039
       Alexander_9: 289755706
   spritePackingTag: 
