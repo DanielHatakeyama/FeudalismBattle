@@ -8,6 +8,7 @@ public class CameraBehavior : MonoBehaviour
 
     private Vector2 maxBounds;
     private Vector2 minBounds;
+    private 
 
     private Camera camera;
 
@@ -29,5 +30,7 @@ public class CameraBehavior : MonoBehaviour
         cameraPosition.x = Mathf.Clamp(cameraPosition.x, minBounds.x, maxBounds.x);
         cameraPosition.y = Mathf.Clamp(cameraPosition.y, minBounds.y, maxBounds.y);
         Camera.main.transform.position = cameraPosition;
+
+        Debug.Log(cameraPosition);
     }
 }
